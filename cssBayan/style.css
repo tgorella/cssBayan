@@ -1,0 +1,125 @@
+:root {
+  font-size: 16px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("./assets/images/bg.jpg");
+  background-position: top;
+  background-repeat: repeat-y;
+  background-size: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.bayan-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  width: 60rem;
+  max-width: 90%;
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  border: #363636 1px solid;
+}
+
+.bayan-item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #6c6c6c;
+  padding: 1rem 0;
+}
+label {
+  cursor: pointer;
+}
+.bayan-title {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.bayan-title h1 {
+  font-size: 2rem;
+}
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.bayan-item input {
+  display: none;
+}
+
+.bayan-item input:checked + label div.item-content {
+  height: auto;
+}
+.bayan-item input:checked + label div.item-content img {
+  transform: scale(1);
+}
+.bayan-item input:checked + label div.icon {
+  transform: rotate(45deg);
+}
+.icon {
+  opacity: 1;
+  font-size: 3rem;
+  transition: 0.6s transform;
+}
+.item-content {
+  overflow: hidden;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-out 1s;
+}
+.item-content img {
+  transform: scale(0);
+  width: 30rem;
+  max-width: 100%;
+  transition: 1s transform;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .bayan-item:hover .item-content {
+    height: auto;
+  }
+  .bayan-item:hover .item-content img {
+    transform: scale(1);
+  }
+  .bayan-item:hover .icon {
+    transform: rotate(45deg);
+  }
+  .icon {
+    opacity: 0;
+  }
+  .bayan-container:hover .icon {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 426px) and (max-width: 820px) {
+  :root {
+    font-size: 13px;
+  }
+}
